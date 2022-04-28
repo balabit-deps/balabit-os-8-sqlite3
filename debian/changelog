@@ -1,3 +1,13 @@
+sqlite3 (3.31.1-4ubuntu0.3) focal-security; urgency=medium
+  
+  * SECURITY UPDATE: segmentation fault in idxGetTableInfo
+    - debian/patches/CVE-2021-36690.patch: perform validation
+      over the column to ensure it has collating sequence in
+      ext/expert/sqlite3expert.c
+    - CVE-2021-36690
+
+ -- David Fernandez Gonzalez <david.fernandezgonzalez@canonical.com>  Thu, 28 Apr 2022 15:24:31 +0200
+
 sqlite3 (3.31.1-4ubuntu0.2) focal-security; urgency=medium
 
   * SECURITY UPDATE: multiSelectOrderBy heap overflow
