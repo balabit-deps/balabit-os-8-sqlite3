@@ -1,3 +1,23 @@
+sqlite3 (3.31.1-4ubuntu0.4) focal-security; urgency=medium
+
+  * SECURITY UPDATE: null pointer dereference in INTERSEC query processing
+    - debian/patches/CVE-2020-35525.patch: early-out on the INTERSECT query
+      processing following an error in src/select.c.
+    - CVE-2020-35525
+  * SECURITY UPDATE: out of bounds access problem
+    - debian/patches/CVE-2020-35527.patch: fix a problem with ALTER TABLE
+      for views that have a nested FROM clause in src/select.c,
+      test/altertab.test.
+    - CVE-2020-35527
+  * SECURITY UPDATE: unicode61 tokenizer nul character mishandling
+    - debian/patches/CVE-2021-20223.patch: prevent fts5 tokenizer unicode61
+      from considering '\0' to be  a token characters, even if other
+      characters of class "Cc" are in ext/fts5/fts5_unicode2.c,
+      ext/fts5/test/fts5tok1.test.
+    - CVE-2021-20223
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 14 Sep 2022 12:44:43 -0400
+
 sqlite3 (3.31.1-4ubuntu0.3) focal-security; urgency=medium
   
   * SECURITY UPDATE: segmentation fault in idxGetTableInfo
