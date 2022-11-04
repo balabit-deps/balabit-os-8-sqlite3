@@ -1,3 +1,12 @@
+sqlite3 (3.31.1-4ubuntu0.5) focal-security; urgency=medium
+
+  * SECURITY UPDATE: array-bounds overflow via large string argument
+    - debian/patches/CVE-2022-35737.patch: increase the size of loop
+      variables in src/printf.c.
+    - CVE-2022-35737
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Fri, 04 Nov 2022 09:12:40 -0400
+
 sqlite3 (3.31.1-4ubuntu0.4) focal-security; urgency=medium
 
   * SECURITY UPDATE: null pointer dereference in INTERSEC query processing
